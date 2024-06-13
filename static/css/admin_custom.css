@@ -1,0 +1,26 @@
+/* static/css/admin_custom.css */
+
+/* General admin styling */
+body {
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+.admin-custom .module h2 {
+    color: #1a1a1a;
+}
+
+.admin-custom .form-row {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
+
+/* CKEditor text area styling */
+.cke_editable {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+}
+
+.ck.ck-word-count {
+    color: #ffffff !important; /* Makes the text color white */
+}

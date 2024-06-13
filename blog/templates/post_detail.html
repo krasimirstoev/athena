@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1 class="mb-4">{{ post.title }}</h1>
+    <h2 class="mb-4">{{ post.subtitle }}</h2>
+    <div class="mt-4">
+        <p>{{ post.body|safe }}</p>
+    </div>
+
+    <h3 class="mt-5">Comments ({{ comments.count }})</h3>
+    {% for comment in comments %}
+        <div class="media mb-4 p-3 border rounded">
+            <img src="{{ comment.gravatar_url }}" class="mr-3 rounded-circle" alt="{{ comment.name }}" style="width: 64px; height: 64px;">
+            <div class="media-body">
+                <h5 class="mt-0">{{ comment.name }}</h5>
+                <p>{{ comment.comment }}</p>
+                <small class="text-muted">{{ comment.created_on|date:"F d, Y H:i" }}</small>
+            </div>
+        </div>
+    {% empty %}
+        <p>No comments yet. Be the first to comment!</p>
+    {% endfor %}
+
+    <h3 class="mt-5">Leave a Comment</h3>
+    {% if comment_submitted %}
+        {% if new_comment.active %}
+            <div class="alert alert-success" role="alert">
+                Your comment has been posted.
+            </div>
+        {% else %}
+            <div class="alert alert-info" role="alert">
+                Your comment has been submitted and is awaiting moderation.
+            </div>
+        {% endif %}
+    {% endif %}
+    <form method="post" class="mt-4">
+        {% csrf_token %}
+        <div class="form-group">
+            {{ comment_form.name.label_tag }}
+            {{ comment_form.name }}
+        </div>
+        <div class="form-group">
+            {{ comment_form.email.label_tag }}
+            {{ comment_form.email }}
+        </div>
+        <div class="form-group">
+            {{ comment_form.web.label_tag }}
+            {{ comment_form.web }}
+        </div>
+        <div class="form-group">
+            {{ comment_form.comment.label_tag }}
+            {{ comment_form.comment }}
+        </div>
+        <button type="submit" class="btn btn-primary mt-3">Submit Comment</button>
+    </form>
+{% endblock %}
