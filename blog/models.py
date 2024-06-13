@@ -21,16 +21,14 @@ class Post(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     slug = models.SlugField(unique=True, max_length=200)
 
+    class Meta:
+        ordering = ['-post_time']
+
     def save(self, *args, **kwargs):
         if not self.slug:
             self.slug = slugify(self.title)
-            unique_slug = self.slug
-            num = 1
-            while Post.objects.filter(slug=unique_slug).exists():
-                unique_slug = f'{self.slug}-{num}'
-                num += 1
-            self.slug = unique_slug
         super().save(*args, **kwargs)
+
 
     def __str__(self):
         return self.title
