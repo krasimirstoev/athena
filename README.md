@@ -9,20 +9,25 @@ Also **Athena** is a nostalgic glimpse to the days before WordPress became the p
 ## Blog posts
 
 **Title**: Every blog post features a prominent title.
+
 **Subtitle**: An optional subtitle to provide additional context or a summary of the post.
+
 **Content**: Rich text content supported by CKEditor 5, allowing for detailed and formatted posts.
+
 **Post Time**: Automatically captured when a post is published.
+
 **Category**: Posts can be categorized for better organization and navigation.
+
 **Slug**: Custom URLs for every blog post for better SEO and user-friendly links.
 
 ## Comment System
 
-**Name**: The name of the commenter.
-**Email**: Commenter's email address, used for Gravatar integration and not publicly displayed.
-**Website**: An optional field for the commenter’s website.
-**Comment**: The main content of the comment.
-**IP Address**: Captured for administrative purposes and displayed only in the admin panel.
-**Gravatar Integration**: Automatically displays the Gravatar associated with the commenter’s email.
+- **Name**: The name of the commenter.
+- **Email**: Commenter's email address, used for Gravatar integration and not publicly displayed.
+- **Website**: An optional field for the commenter’s website.
+- **Comment**: The main content of the comment.
+- **IP Address**: Captured for administrative purposes and displayed only in the admin panel.
+- **Gravatar Integration**: Automatically displays the Gravatar associated with the commenter’s email.
 
 **Moderation**:
 - Comments from new email addresses are held for moderation.
@@ -30,31 +35,31 @@ Also **Athena** is a nostalgic glimpse to the days before WordPress became the p
 
 ## Pages
 
-**Dynamic Navigation**: New pages automatically appear in the navigation bar.
-**Management**: Add, edit, and delete pages via the admin interface.
-**Fields**: Title, Body (using CKEditor 5), Date, and Slug.
+- **Dynamic Navigation**: New pages automatically appear in the navigation bar.
+- **Management**: Add, edit, and delete pages via the admin interface.
+- **Fields**: Title, Body (using CKEditor 5), Date, and Slug.
 
 ## RSS Feeds
 
-**Posts RSS Feed**: Users can subscribe to the latest blog posts.
-**Comments RSS Feed**: Users can subscribe to the latest comments on the blog.
-**Benefits**:
-- Keeps subscribers updated with the latest content.
-- Enhances SEO by allowing search engines to discover and index new content quickly.
+- **Posts RSS Feed**: Users can subscribe to the latest blog posts.
+- **Comments RSS Feed**: Users can subscribe to the latest comments on the blog.
+- **Benefits**:
+    - Keeps subscribers updated with the latest content.
+    - Enhances SEO by allowing search engines to discover and index new content quickly.
 
 # Setup and Configuration
 ## Prerequisites
-
-> Python 3.9 or later
-> Django 3.x or later
-> CKEditor 5
-
+```
+Python 3.9 or later
+Django 3.x or later
+CKEditor 5
+```
 ## Installation
 
 **Clone the Repository:**
 
-``git clone https://github.com/yourusername/athenablog.git``
-``cd athenablog``
+``git clone https://github.com/krasimirstoev/athena``
+``cd athena``
 
 **Create a Virtual Environment (optional):**
 
@@ -78,8 +83,8 @@ Run the application/server depends on what system you are using.
 
 ## Configuration
 
-**Admin Interface**: Access the admin interface at /admin to manage posts, comments, categories, and pages.
-**Site Settings**: Configure site-wide settings such as blog name, subtitle, and posts per page through the admin interface.
+- **Admin Interface**: Access the admin interface at /admin to manage posts, comments, categories, and pages.
+- **Site Settings**: Configure site-wide settings such as blog name, subtitle, and posts per page through the admin interface.
 
 # Detailed Features
 ## Blog Post Management
@@ -90,6 +95,7 @@ Run the application/server depends on what system you are using.
 Our comment system is designed to facilitate user engagement while maintaining control over the content:
 
 **Moderation**: New commenters are subject to moderation to prevent spam. Once a commenter is approved, their future comments are published immediately.
+
 **Gravatar Integration**: By connecting email addresses to Gravatar, commenter avatars are displayed.
 
 ## Dynamic Pages
@@ -101,6 +107,7 @@ Our comment system is designed to facilitate user engagement while maintaining c
 RSS feeds are provided for both posts and comments, keeping your audience engaged with the latest content and discussions:
 
 **Posts RSS Feed**: Keeps users updated with new blog entries.
+
 **Comments RSS Feed**: Keeps users informed about the latest discussions.
 
 ## Navigation
